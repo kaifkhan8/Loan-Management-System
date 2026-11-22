@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Loan Management System</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<header>
+		<h1>Loan Management System</h1>
+		<p>Manage Customers, Loan Applications and Payments</p>
+	</header>
+
+	<!-- Navigation -->
+	<nav>
+		<button onclick="showSection('customers')">Customers</button>
+		<button onclick="showSection('applications')">Applications</button>
+		<button onclick="showSection('payments')">Payments</button>
+	</nav>
+
+	<main>
+
+		<!-- CUSTOMER SECTION -->
+		<section id="customers" class="container">
+
+			<h2>Customer Management</h2>
+
+			<form id="customerForm">
+
+				<input type="text" id="customerName" placeholder="Customer Name"
+					required> <input type="email" id="email"
+					placeholder="Email Address" required> <input type="text"
+					id="phone" placeholder="Phone Number" required> <input
+					type="text" id="address" placeholder="Address" required> <input
+					type="text" id="panNumber" placeholder="PAN Number" required>
+
+				<button type="submit">Add Customer</button>
+
+				<button type="button" class="cancel-btn"
+					onclick="cancelEdit('customerForm')">Cancel Edit</button>
+
+			</form>
+
+			<div id="customerList"></div>
+
+		</section>
+
+
+		<!-- APPLICATION SECTION -->
+		<section id="applications" class="container" hidden>
+
+			<h2>Loan Application Management</h2>
+
+			<form id="applicationForm">
+
+				<input type="text" id="loanType" placeholder="Loan Type (HOME_LOAN)"
+					required> <input type="number" id="requestedAmount"
+					placeholder="Requested Amount" min="1" required> <input
+					type="date" id="applicationDate" required> <select
+					id="status" required>
+
+					<option value="">Select Status</option>
+					<option value="PENDING">PENDING</option>
+					<option value="APPROVED">APPROVED</option>
+					<option value="REJECTED">REJECTED</option>
+
+				</select>
+
+				<button type="submit">Submit Application</button>
+
+				<button type="button" class="cancel-btn"
+					onclick="cancelEdit('applicationForm')">Cancel Edit</button>
+
+			</form>
+
+			<div id="applicationList"></div>
+
+		</section>
+
+
+		<!-- PAYMENT SECTION -->
+		<section id="payments" class="container" hidden>
+
+			<h2>Payment Management</h2>
+
+			<form id="paymentForm">
+
+				<input type="date" id="paymentDate" required> <input
+					type="number" id="amount" placeholder="Payment Amount" min="0.01"
+					step="0.01" required> <select id="paymentMethod" required>
+
+					<option value="">Select Payment Method</option>
+					<option value="UPI">UPI</option>
+					<option value="CASH">CASH</option>
+					<option value="NET_BANKING">NET BANKING</option>
+					<option value="CARD">CARD</option>
+
+				</select> <select id="paymentStatus" required>
+
+					<option value="">Select Payment Status</option>
+					<option value="SUCCESS">SUCCESS</option>
+					<option value="PENDING">PENDING</option>
+					<option value="FAILED">FAILED</option>
+
+				</select> <input type="text" id="transactionId" placeholder="Transaction ID"
+					required>
+
+				<button type="submit">Add Payment</button>
+
+				<button type="button" class="cancel-btn"
+					onclick="cancelEdit('paymentForm')">Cancel Edit</button>
+
+			</form>
+
+			<div id="paymentList"></div>
+
+		</section>
+
+	</main>
+
+
+	<!-- Footer -->
+	<footer>
+		<p>Loan Management System | Spring Boot + PostgreSQL</p>
+	</footer>
+
+
+	<!-- JavaScript -->
+	<script src="/script.js"></script>
+
+</body>
+
+</html>
+
