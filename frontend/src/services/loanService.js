@@ -1,7 +1,6 @@
 
 import axios from "axios";
-
-const API_URL = "http://localhost:8080/api/loans";
+const API_URL = "https://loan-management-system-vp1t.onrender.com/api/loans";
 
 // Get All Loans
 export const getAllLoans = async () => {

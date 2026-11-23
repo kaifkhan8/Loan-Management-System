@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/customers";
+const API_URL = "https://loan-management-system-vp1t.onrender.com/api/customers";
 
 export const getAllCustomers = async () => {
     const response = await axios.get(API_URL);
